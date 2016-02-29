@@ -1,0 +1,11 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-webpack": "*",
+    "gulp-compass": "*",
+    "gulp-connect": "*"
+  }
+}
