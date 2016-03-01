@@ -56,14 +56,13 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	var React = __webpack_require__(2),
 	    ReactDOM = __webpack_require__(159),
 	    Home = __webpack_require__(160);
 
-	 ReactDOM.render(React.createElement(Home, null), document.getElementById('root'));
-
-
-
+	ReactDOM.render(React.createElement(Home, null), document.getElementById('root'));
 
 /***/ },
 /* 2 */
@@ -19670,66 +19669,69 @@
 /* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	var React = __webpack_require__(2),
 	    Greeting = __webpack_require__(161);
 
+	var Home = React.createClass({
+	    displayName: 'Home',
 
-	var Home = React.createClass({displayName: "Home",
-	      componentDidMount: function () {
-
-	      },
-	      render: function () {
-	        return (
-	            React.createElement(Greeting, null)
-	        );
-	      }
-	  });
+	    componentDidMount: function componentDidMount() {},
+	    render: function render() {
+	        return React.createElement(Greeting, null);
+	    }
+	});
 
 	module.exports = Home;
-
-
-
 
 /***/ },
 /* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(2);
+	"use strict";
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Greeting = _react2.default.createClass({
+	  displayName: "Greeting",
 
 
-	var Greeting = React.createClass({displayName: "Greeting",
-
-	      componentDidMount: function () {
-
-
-	      },
-	      render: function () {
-	        return (
-	            React.createElement("div", {className: "container"}, " whose on first not me I AM")
-	        );
-	      }
-	  });
-
+	  componentDidMount: function componentDidMount() {},
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "div",
+	      { className: "container" },
+	      " whose on first not me I AM time: ",
+	      new Date().getTime()
+	    );
+	  }
+	});
+	//
+	//var React = require('react');
 	module.exports = Greeting;
-
-
-
 
 /***/ },
 /* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	var Dispatcher = __webpack_require__(163).Dispatcher;
-	    AppDispatcher = new Dispatcher();
+	AppDispatcher = new Dispatcher();
 
-
-	AppDispatcher.handleViewAction = function(action) {
+	AppDispatcher.handleViewAction = function (action) {
 	  this.dispatch({
 	    source: 'VIEW_ACTION',
 	    action: action
 	  });
 	};
 
+	//
 
 	module.exports = AppDispatcher;
 
@@ -20045,6 +20047,8 @@
 /* 166 */
 /***/ function(module, exports) {
 
+	"use strict";
+
 	module.exports = {
 
 	    LOAD_EXAMPLE: "LOAD_EXAMPLE"
@@ -20055,18 +20059,16 @@
 /* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	var AppDispatcher = __webpack_require__(162);
 	var EventEmitter = __webpack_require__(168).EventEmitter;
 	var ExampleConstants = __webpack_require__(166);
 	var merge = __webpack_require__(169);
 
+	var ExampleStore = merge(EventEmitter.prototype, {});
 
-	var ExampleStore = merge(EventEmitter.prototype, {
-
-	});
-
-
-	ExampleStore.dispatcherIndex = AppDispatcher.register(function(payload) {
+	ExampleStore.dispatcherIndex = AppDispatcher.register(function (payload) {
 	    var type = payload.actionType,
 	        data = payload.action;
 
