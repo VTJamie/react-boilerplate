@@ -7,6 +7,8 @@ module.exports = {
     "views_js": "app/views/js",
     "views_jsfiles": "app/views/js/**/*.js",
     "views_jsx": "app/views/jsx",
-    "views_jsxfiles": "app/views/jsx/**/*.jsx"
+    "views_jsxfiles": "app/views/jsx/**/*.jsx",
+    "data_js": "app/data/js",
+    "data_jsfiles": "app/data/js/**/*.js",
 
 };

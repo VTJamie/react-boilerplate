@@ -10,6 +10,7 @@
     "gulp-react": "*",
     "react": "*",
     "react-dom": "*",
-    "flux": "*"
+    "flux": "*",
+    "merge": "*"
   }
 }

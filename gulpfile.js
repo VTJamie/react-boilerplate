@@ -26,7 +26,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('webpack', ['js'], function () {
-    return gulp.src(config.views_jsfiles)
+    return gulp.src([config.views_jsfiles, config.data_jsfiles])
     .pipe(webpack({
         output: {
                 filename: 'main.js'
