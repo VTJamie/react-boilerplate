@@ -5,3 +5,4 @@ node_modules/
 app/views/js/
 build/
 app/main.js
+app/styles/css/main.css

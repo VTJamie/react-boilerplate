@@ -6,6 +6,11 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     config = require('./gulp-config');
 
+    function onError(err) {
+      console.log(err);
+      this.emit('end');
+    }
+
 gulp.task('default', ['build', 'connect', 'watch']);
 
 gulp.task('build', ['styles', 'js'])
@@ -16,6 +21,7 @@ gulp.task('styles', function () {
 	    sass: config.sass_directory,
 	    css: config.css
 	}))
+	.on('error', onError)
 	.pipe(gulp.dest(config.css))
 	.pipe(connect.reload());
 });
@@ -37,6 +43,7 @@ gulp.task('js', function () {
                     filename: 'main.js'
                   }
      }))
+     .on('error', onError)
      .pipe(gulp.dest(config.app))
      .pipe(connect.reload());
 });
@@ -46,8 +53,7 @@ gulp.task('connect', function() {
   connect.server({
     root: [config.app],
     port: 9000,
-
     livereload: true
-
   });
 });
+

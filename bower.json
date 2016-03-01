@@ -5,8 +5,7 @@
     "amd"
   ],
   "dependencies": {
-    "bootstrap-sass": "*",
-    "reactjs": "*"
+    "bootstrap-sass": "*"
   },
   "license": "MIT",
   "ignore": [
