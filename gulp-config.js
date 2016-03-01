@@ -4,9 +4,9 @@ module.exports = {
     "dist": "dist",
     "sass": "app/styles/sass",
     "css": "app/styles/css",
-    "js": "app/js",
-    "jsfiles": "app/js/**/*.js",
-    "jsx": "app/jsx",
-    "jsxfiles": "app/jsx/**/*.jsx"
+    "views_js": "app/views/js",
+    "views_jsfiles": "app/views/js/**/*.js",
+    "views_jsx": "app/views/jsx",
+    "views_jsxfiles": "app/views/jsx/**/*.jsx"
 
 };

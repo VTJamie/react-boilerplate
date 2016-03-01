@@ -9,7 +9,7 @@ var Greeting = React.createClass({
       },
       render: function () {
         return (
-            <div className="container"> whose on first</div>
+            <div className="container"> whose on first not me I AM</div>
         );
       }
   });

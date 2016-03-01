@@ -19672,9 +19672,7 @@
 
 
 	var Home = React.createClass({displayName: "Home",
-
 	      componentDidMount: function () {
-
 
 	      },
 	      render: function () {
@@ -19704,7 +19702,7 @@
 	      },
 	      render: function () {
 	        return (
-	            React.createElement("div", {className: "container"}, " whose on first")
+	            React.createElement("div", {className: "container"}, " whose on first not me I AM")
 	        );
 	      }
 	  });

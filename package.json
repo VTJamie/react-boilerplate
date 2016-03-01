@@ -9,6 +9,7 @@
     "gulp-connect": "*",
     "gulp-react": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "flux": "*"
   }
 }

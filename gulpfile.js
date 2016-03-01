@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', ['build', 'connect', 'watch']);
 
-gulp.task('build', ['styles', 'js', 'webpack'])
+gulp.task('build', ['styles', 'webpack'])
 
 gulp.task('styles', function () {
 	return gulp.src(config.sass + '/**/*.scss')
@@ -15,18 +15,18 @@ gulp.task('styles', function () {
 	    sass: config.sass,
 	    css: config.css
 	}))
-	.pipe(gulp.dest(config.css));
+	.pipe(gulp.dest(config.css))
+	.pipe(connect.reload());
 });
 
 
 gulp.task('watch', function () {
-
     gulp.watch([config.sass + '/**/*.scss'], ['styles']);
-    gulp.watch([config.jsxfiles], ['js', 'webpack']);
+    gulp.watch([config.views_jsxfiles], ['webpack']);
 });
 
-gulp.task('webpack', function () {
-    return gulp.src(config.jsfiles)
+gulp.task('webpack', ['js'], function () {
+    return gulp.src(config.views_jsfiles)
     .pipe(webpack({
         output: {
                 filename: 'main.js'
@@ -36,10 +36,11 @@ gulp.task('webpack', function () {
     .pipe(connect.reload());
 });
 
+
 gulp.task('js', function () {
-    return gulp.src(config.jsxfiles)
+    return gulp.src(config.views_jsxfiles)
     .pipe(react())
-    .pipe(gulp.dest(config.js));
+    .pipe(gulp.dest(config.views_js));
 });
 
 //BIG NOTE  current version of gulp-connect 3.1.0 has a bug where live reload isn't triggering
