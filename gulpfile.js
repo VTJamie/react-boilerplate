@@ -37,6 +37,7 @@ gulp.task('js', function () {
     .pipe(babel({
        		presets: ['react', 'es2015']
     }))
+    .on('error', onError)
     .pipe(gulp.dest(config.build))
     .pipe(webpack({
             output: {

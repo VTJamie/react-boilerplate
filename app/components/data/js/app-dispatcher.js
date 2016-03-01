@@ -1,4 +1,4 @@
-var Dispatcher = require('flux').Dispatcher;
+var Dispatcher = require('flux').Dispatcher,
     AppDispatcher = new Dispatcher();
 
 
@@ -8,7 +8,5 @@ AppDispatcher.handleViewAction = function(action) {
     action: action
   });
 };
-
-//
 
 module.exports = AppDispatcher;
