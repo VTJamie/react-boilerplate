@@ -6,6 +6,9 @@
     "gulp": "*",
     "gulp-webpack": "*",
     "gulp-compass": "*",
-    "gulp-connect": "*"
+    "gulp-connect": "*",
+    "gulp-react": "*",
+    "react": "*",
+    "react-dom": "*"
   }
 }
