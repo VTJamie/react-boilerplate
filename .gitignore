@@ -4,3 +4,4 @@ node_modules/
 .sass-cache/
 app/views/js/
 build/
+app/main.js

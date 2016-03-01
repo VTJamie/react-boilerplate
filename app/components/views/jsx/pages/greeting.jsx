@@ -13,7 +13,7 @@ var Greeting = React.createClass({
         );
       }
   });
-//
+
 module.exports = Greeting;
 
 
