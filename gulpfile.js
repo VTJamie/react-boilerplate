@@ -11,7 +11,7 @@ gulp.task('default', ['build', 'connect', 'watch']);
 gulp.task('build', ['styles', 'js'])
 
 gulp.task('styles', function () {
-	return gulp.src(config.sass + '/**/*.scss')
+	return gulp.src(config.sass_files)
 	.pipe(compass({
 	    sass: config.sass,
 	    css: config.css
@@ -22,18 +22,12 @@ gulp.task('styles', function () {
 
 
 gulp.task('watch', function () {
-    gulp.watch([config.sass + '/**/*.scss'], ['styles']);
-    gulp.watch([config.jsxfiles, config.jsfiles], ['js']);
+    gulp.watch([config.sass_files], ['styles']);
+    gulp.watch([config.jsx_files, config.js_files], ['js']);
 });
-
-gulp.task('reload', function () {
-    return gulp.src(config.jsfiles)
-    .pipe(connect.reload());
-});
-
 
 gulp.task('js', function () {
-    return gulp.src([config.jsxfiles, config.jsfiles])
+    return gulp.src([config.jsx_files, config.js_files])
     .pipe(babel({
        		presets: ['react', 'es2015']
     }))
