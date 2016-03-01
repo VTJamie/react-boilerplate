@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     webpack = require('gulp-webpack'),
     config = require('./gulp-config');
 
-gulp.task('default', ['styles', 'js', 'webpack', 'connect', 'watch']);
+gulp.task('default', ['build', 'connect', 'watch']);
+
+gulp.task('build', ['styles', 'js', 'webpack'])
 
 gulp.task('styles', function () {
 	return gulp.src(config.sass + '/**/*.scss')
@@ -24,10 +26,10 @@ gulp.task('watch', function () {
 });
 
 gulp.task('webpack', function () {
-    return gulp.src(config.js + '/app.js')
+    return gulp.src(config.jsfiles)
     .pipe(webpack({
         output: {
-                filename: 'main.js',
+                filename: 'main.js'
               }
     }))
     .pipe(gulp.dest(config.app))
