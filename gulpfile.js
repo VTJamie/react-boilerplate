@@ -13,7 +13,7 @@ gulp.task('build', ['styles', 'js'])
 gulp.task('styles', function () {
 	return gulp.src(config.sass_files)
 	.pipe(compass({
-	    sass: config.sass,
+	    sass: config.sass_directory,
 	    css: config.css
 	}))
 	.pipe(gulp.dest(config.css))
