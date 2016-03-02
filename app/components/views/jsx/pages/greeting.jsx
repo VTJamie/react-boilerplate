@@ -3,7 +3,7 @@ import React from 'react'
 
 var Greeting = React.createClass({
       getInitialState: function() {
-        return {exampletextbox: 'initval'};
+        return {exampletextbox: ''};
       },
       componentDidMount: function () {
 

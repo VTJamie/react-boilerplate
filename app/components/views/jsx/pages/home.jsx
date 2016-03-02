@@ -8,7 +8,9 @@ var Home = React.createClass({
       },
       render: function () {
         return (
+            <div>OUTSIDE: {new Date().getTime()}
             <Greeting />
+            </div>
         );
       }
   });
