@@ -1,9 +1,10 @@
 var gulp = require('gulp'),
     compass = require('gulp-compass'),
-    connect = require('gulp-connect'),
     react = require('gulp-react'),
     webpack = require('webpack-stream'),
     babel = require('gulp-babel'),
+    livereload = require('gulp-livereload'),
+    nodemon = require('gulp-nodemon'),
     config = require('./gulp-config');
 
     function onError(err) {
@@ -11,7 +12,21 @@ var gulp = require('gulp'),
       this.emit('end');
     }
 
-gulp.task('default', ['build', 'connect', 'watch']);
+gulp.task('default', ['build', 'serve', 'watch']);
+
+gulp.task('serve', function () {
+
+    livereload.listen();
+    nodemon({
+    		// the script to run the app
+    		script: config.app + '/components/server/server.js',
+    		ext: 'js'
+    	});
+
+    setInterval(function () {
+        livereload.reload();
+    }, 500);
+});
 
 gulp.task('build', ['styles', 'js'])
 
@@ -47,14 +62,5 @@ gulp.task('js', function () {
      .on('error', onError)
      .pipe(gulp.dest(config.app))
      .pipe(connect.reload());
-});
-
-//BIG NOTE  current version of gulp-connect 3.1.0 has a bug where live reload isn't triggering
-gulp.task('connect', function() {
-  connect.server({
-    root: [config.app],
-    port: 9000,
-    livereload: true
-  });
 });
 
