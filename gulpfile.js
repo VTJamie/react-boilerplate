@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     compass = require('gulp-compass'),
     connect = require('gulp-connect'),
     react = require('gulp-react'),
-    webpack = require('gulp-webpack'),
+    webpack = require('webpack-stream'),
     babel = require('gulp-babel'),
     config = require('./gulp-config');
 

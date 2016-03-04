@@ -4,21 +4,24 @@
   "description": "",
   "dependencies": {
     "gulp": "*",
-    "gulp-webpack": "*",
+    "webpack-stream": "*",
     "gulp-compass": "*",
-    "gulp-connect": "*",
     "gulp-react": "*",
     "gulp-babel": "*",
+    "gulp-livereload": "*",
+    "gulp-nodemon": "*",
     "babel-preset-react": "*",
     "babel-preset-es2015": "*",
     "react": "*",
     "react-dom": "*",
     "react-redux": "*",
+    "redux": "*",
     "react-router": "*",
     "flux": "*",
     "merge": "*",
     "ejs": "*",
     "isomorphic-fetch": "*",
-    "es6-promise": "*"
+    "es6-promise": "*",
+    "express": "*"
   }
 }
