@@ -14,8 +14,10 @@
     "react": "*",
     "react-dom": "*",
     "react-redux": "*",
+    "react-router": "*",
     "flux": "*",
     "merge": "*",
+    "ejs": "*",
     "isomorphic-fetch": "*",
     "es6-promise": "*"
   }
