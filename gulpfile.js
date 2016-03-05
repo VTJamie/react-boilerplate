@@ -19,13 +19,10 @@ gulp.task('serve', function () {
     livereload.listen();
     nodemon({
     		// the script to run the app
-    		script: config.app + '/components/server/server.js',
-    		ext: 'js'
+    		script: config.app + '/components/server/server.jsx',
+    		ext: 'js jsx',
+    		exec: 'babel-node --presets es2015,react'
     	});
-
-    setInterval(function () {
-        livereload.reload();
-    }, 500);
 });
 
 gulp.task('build', ['styles', 'js'])
@@ -38,7 +35,7 @@ gulp.task('styles', function () {
 	}))
 	.on('error', onError)
 	.pipe(gulp.dest(config.css))
-	.pipe(connect.reload());
+	.pipe(livereload.reload());
 });
 
 
@@ -61,6 +58,6 @@ gulp.task('js', function () {
      }))
      .on('error', onError)
      .pipe(gulp.dest(config.app))
-     .pipe(connect.reload());
+     .pipe(livereload.reload());
 });
 
