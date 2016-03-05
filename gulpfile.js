@@ -24,7 +24,7 @@ gulp.task('serve', function () {
     		ext: 'js jsx',
     		ignore: [config.server_public + '/**/*'],
     		exec: 'babel-node --presets es2015,react'
-    	});
+    	}).on('error', onError);
 });
 
 gulp.task('build', ['styles', 'js'])

@@ -34,9 +34,11 @@ export default React.createClass({
     });
   },
   render() {
-    return <div className="container">
-            <Header />
+    return <div><Header />
+        <div className="container">
+
             <div onClick={this.clickEvent}>{this.state.greeting}</div>
+        </div>
         </div>
   }
 })

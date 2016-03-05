@@ -1,9 +1,8 @@
 import React from 'react'
 export default React.createClass({
-  clickEvent(e) {
-    console.log("Uhm");
-  },
   render() {
-    return <div onClick={this.clickEvent}>Header Coolio</div>
+    return <header className="navbar navbar-container navbar-default">
+            <h1 className="navbar-brand">Header Coolio</h1>
+        </header>
   }
 })
