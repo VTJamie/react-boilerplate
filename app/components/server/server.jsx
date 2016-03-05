@@ -7,6 +7,8 @@ app.set('view engine', 'ejs');
 
 app.set('views', __dirname + '/views');
 
+app.use('/static', express.static(__dirname + '/public'));
+
 reactentry(app);
 
 app.listen(3000, function () {

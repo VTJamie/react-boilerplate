@@ -21,8 +21,13 @@ gulp.task('serve', function () {
     		// the script to run the app
     		script: config.app + '/components/server/server.jsx',
     		ext: 'js jsx',
+    		ignore: [config.server_public + "/**/*"],
     		exec: 'babel-node --presets es2015,react'
-    	});
+    	}).on('restart', ['js', function(){
+          		// when the app has restarted, run livereload.
+          		gulp.src(config.server_public + '/main.js')
+          			.pipe(livereload());
+          	}]);
 });
 
 gulp.task('build', ['styles', 'js'])
@@ -34,18 +39,17 @@ gulp.task('styles', function () {
 	    css: config.css
 	}))
 	.on('error', onError)
-	.pipe(gulp.dest(config.css))
-	.pipe(livereload.reload());
+	.pipe(gulp.dest(config.css));
 });
 
 
 gulp.task('watch', function () {
     gulp.watch([config.sass_files], ['styles']);
-    gulp.watch([config.jsx_files, config.js_files], ['js']);
+    gulp.watch([config.isomorphic_jsx_files, config.isomorphic_js_files], ['js']);
 });
 
 gulp.task('js', function () {
-    return gulp.src([config.jsx_files, config.js_files])
+    return gulp.src([config.isomorphic_jsx_files, config.isomorphic_js_files])
     .pipe(babel({
        		presets: ['react', 'es2015']
     }))
@@ -57,7 +61,6 @@ gulp.task('js', function () {
                   }
      }))
      .on('error', onError)
-     .pipe(gulp.dest(config.app))
-     .pipe(livereload.reload());
+     .pipe(gulp.dest(config.server_public));
 });
 

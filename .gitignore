@@ -4,5 +4,5 @@ node_modules/
 .sass-cache/
 app/views/js/
 build/
-app/main.js
-app/styles/css/main.css
+app/components/server/public/main.js
+app/components/server/public/styles/main.css

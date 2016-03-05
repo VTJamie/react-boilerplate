@@ -1,6 +1,6 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-import App  from '../views/App'
+import App  from '../isomorphic/views/App'
 
 export default (expressapp) => {
     expressapp.get('/', function(req, res) {

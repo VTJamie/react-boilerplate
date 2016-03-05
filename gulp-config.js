@@ -5,8 +5,9 @@ module.exports = {
     "dist": "dist",
     "sass_directory": "app/styles/sass",
     "sass_files": "app/styles/sass/**/*.scss",
-    "css": "app/styles/css",
-    "jsx_files": "app/components/**/*.jsx",
-    "js_files": "app/components/**/*.js"
+    "css": "app/components/server/public/styles",
+    "server_public": "app/components/server/public",
+    "isomorphic_jsx_files": "app/components/isomorphic/**/*.jsx",
+    "isomorphic_js_files": "app/components/isomorphic/**/*.js"
 
 };
