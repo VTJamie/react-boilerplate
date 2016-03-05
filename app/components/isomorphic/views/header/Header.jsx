@@ -4,6 +4,6 @@ export default React.createClass({
     console.log("Uhm");
   },
   render() {
-    return <div id="junk"><button onClick={this.clickEvent}>Header</button></div>
+    return <div onClick={this.clickEvent}>Header Coolio</div>
   }
 })

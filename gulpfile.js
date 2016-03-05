@@ -17,29 +17,29 @@ gulp.task('default', ['build', 'serve', 'watch']);
 gulp.task('serve', function () {
 
     livereload.listen();
+    console.log(config.server_public);
     nodemon({
     		// the script to run the app
     		script: config.app + '/components/server/server.jsx',
     		ext: 'js jsx',
-    		ignore: [config.server_public + "/**/*"],
+    		ignore: [config.server_public + '/**/*'],
     		exec: 'babel-node --presets es2015,react'
-    	}).on('restart', ['js', function(){
-          		// when the app has restarted, run livereload.
-          		gulp.src(config.server_public + '/main.js')
-          			.pipe(livereload());
-          	}]);
+    	});
 });
 
 gulp.task('build', ['styles', 'js'])
 
 gulp.task('styles', function () {
-	return gulp.src(config.sass_files)
+	var returnval = gulp.src(config.sass_files)
 	.pipe(compass({
 	    sass: config.sass_directory,
 	    css: config.css
 	}))
 	.on('error', onError)
-	.pipe(gulp.dest(config.css));
+	.pipe(gulp.dest(config.css))
+	.pipe(livereload());
+
+	return returnval;
 });
 
 
@@ -70,6 +70,7 @@ gulp.task('js', function () {
                           }
      }))
      .on('error', onError)
-     .pipe(gulp.dest(config.server_public));
+     .pipe(gulp.dest(config.server_public))
+     .pipe(livereload());
 });
 
