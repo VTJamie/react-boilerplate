@@ -8,6 +8,7 @@ module.exports = {
     "css": "app/components/server/public/styles",
     "server_public": "app/components/server/public",
     "isomorphic_jsx_files": "app/components/isomorphic/**/*.jsx",
-    "isomorphic_js_files": "app/components/isomorphic/**/*.js"
+    "isomorphic_js_files": "app/components/isomorphic/**/*.js",
+    "browser_entry": "app/components/browser/entry.jsx"
 
 };

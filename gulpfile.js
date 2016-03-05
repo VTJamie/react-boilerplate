@@ -45,20 +45,29 @@ gulp.task('styles', function () {
 
 gulp.task('watch', function () {
     gulp.watch([config.sass_files], ['styles']);
-    gulp.watch([config.isomorphic_jsx_files, config.isomorphic_js_files], ['js']);
+    gulp.watch([config.isomorphic_jsx_files, config.isomorphic_js_files, config.browser_entry], ['js']);
 });
 
 gulp.task('js', function () {
-    return gulp.src([config.isomorphic_jsx_files, config.isomorphic_js_files])
-    .pipe(babel({
-       		presets: ['react', 'es2015']
-    }))
-    .on('error', onError)
-    .pipe(gulp.dest(config.build))
+    return gulp.src([config.browser_entry])
     .pipe(webpack({
             output: {
                     filename: 'main.js'
-                  }
+                  },
+                  module: {
+                      loaders: [
+                        {
+                          test: /.jsx?$/,
+                          loader: 'babel-loader',
+                          query: {
+                            presets: ['es2015', 'react']
+                          }
+                        }
+                      ]
+                      },
+                       resolve: {
+                              extensions: ['', '.js', '.jsx']
+                          }
      }))
      .on('error', onError)
      .pipe(gulp.dest(config.server_public));
