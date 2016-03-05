@@ -1,10 +1,7 @@
 import React from 'react'
-import Header from './header/Header'
+import Home from './pages/home/Home'
 export default React.createClass({
   render() {
-    return <div>
-            <Header />
-            <div>Body</div>
-        </div>
+    return <Home />
   }
 })
