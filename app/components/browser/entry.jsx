@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from '../isomorphic/views/App'
+
+import { Router, browserHistory } from 'react-router'
+import routes from '../isomorphic/routes/routes'
 
 
-ReactDOM.render(<App />, document.getElementById('react-root'));
+ReactDOM.render(<Router routes={routes} history={browserHistory}/>, document.getElementById('react-root'));
 
