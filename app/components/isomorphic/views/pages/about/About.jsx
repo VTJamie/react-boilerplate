@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../../header/Header'
+import { Link } from 'react-router'
 export default React.createClass({
   getInitialState() {
         return {
@@ -28,17 +29,11 @@ export default React.createClass({
   componentWillUnmount() {
     console.log("componentWillUnmount");
   },
-  clickEvent() {
-    this.setState({
-        "greeting": "Hello World! " + new Date().getTime()
-    });
-  },
   render() {
-    return <div><Header />
+    return (
         <div className="container">
-
-            <div onClick={this.clickEvent}>{this.state.greeting}</div>
+            <Link to="/">{this.state.greeting}</Link>
         </div>
-        </div>
+        )
   }
 })
