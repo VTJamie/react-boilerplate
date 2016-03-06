@@ -1,8 +1,6 @@
 module.exports = {
 
     "app": "app",
-    "build": "build",
-    "dist": "dist",
     "sass_directory": "app/styles/sass",
     "sass_files": "app/styles/sass/**/*.scss",
     "css": "app/components/server/public/styles",

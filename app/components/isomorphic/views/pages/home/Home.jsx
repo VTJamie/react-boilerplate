@@ -1,11 +1,23 @@
 import React from 'react'
 import Header from '../../header/Header'
 import { Link } from 'react-router'
-export default React.createClass({
+import { connect } from 'react-redux'
+
+function mapStateToProps(state) {
+    return {};
+}
+
+function mapDispatchToProps(dispatch) {
+    return {};
+}
+
+const component = React.createClass({
   getInitialState() {
+
         return {
             "greeting": "Hello World!"
         };
+
   },
   componentWillMount() {
     console.log("componentWillMount");
@@ -45,3 +57,5 @@ export default React.createClass({
     )
   }
 })
+
+export default connect(mapStateToProps, mapDispatchToProps)(component)
