@@ -1,5 +1,5 @@
 import express from 'express'
-import reactentry from './react-entry'
+import serverentry from './server-entry'
 import bodyParser from 'body-parser'
 import exampleEndPoint from './rest/example'
 
@@ -21,7 +21,7 @@ app.use('/static', express.static(__dirname + '/public'));
 
 exampleEndPoint(app);
 
-reactentry(app);
+serverentry(app);
 
 app.listen(3000, function () {
   console.log('Listening on port 3000.');

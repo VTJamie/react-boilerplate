@@ -2,24 +2,22 @@ import React from 'react'
 import Header from '../../header/Header'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
-import fetch from 'isomorphic-fetch'
-import {  } from 'redux'
+import exampleService from '../../../services/example-service'
+import { bindActionCreators } from 'redux'
 
 function mapStateToProps(state) {
-    return {};
+    console.log(state);
+    return state;
 }
 
 function mapDispatchToProps(dispatch) {
+    return {
 
-    function fetchPostsIfNeeded() {
-               return (dispatch, getState) => {
-                    dispatch({type: "MYTYPE", junk: 'YO DOG!'});
-               }
-             }
+        actions: {
+            example: bindActionCreators(exampleService, dispatch)
+        }
 
-    dispatch(fetchPostsIfNeeded());
-
-    return {};
+    };
 }
 
 const component = React.createClass({
@@ -31,12 +29,7 @@ const component = React.createClass({
 
   },
   componentWillMount() {
-    fetch('/rest/example').then((result) => {
-        result.json().then(function (finalresult) {
-            console.log(finalresult);
-        });
-    });
-
+    this.props.actions.example.getList();
     console.log("componentWillMount");
   },
   componentDidMount() {
@@ -64,9 +57,19 @@ const component = React.createClass({
     });
   },
   render() {
+    let rows = [];
+    if (this.props.exampleList != undefined) {
+    let idx = 0;
+    for (idx = 0; idx < this.props.exampleList.example.length; idx++) {
+        rows.push(<div key={this.props.exampleList.example[idx]}>{this.props.exampleList.example[idx]}</div>);
+    }
+    console.log(rows, this.props.exampleList.example.length);
+    }
+
     return (
         <div className="container">
             <div onClick={this.clickEvent}>{this.state.greeting}</div>
+            <div>{rows}</div>
             <div>
                 <Link to="/about">About</Link>
             </div>
