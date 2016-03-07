@@ -1,14 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import { Provider } from 'react-redux'
 import { Router, browserHistory } from 'react-router'
 import routes from '../isomorphic/routes/routes'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-
-const store = createStore((state, action) => {
-    console.log(state, action);
-});
+import store from '../isomorphic/store/store'
 
 ReactDOM.render(
 (

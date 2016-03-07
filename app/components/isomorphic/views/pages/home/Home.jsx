@@ -2,12 +2,23 @@ import React from 'react'
 import Header from '../../header/Header'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
+import fetch from 'isomorphic-fetch'
+import {  } from 'redux'
 
 function mapStateToProps(state) {
     return {};
 }
 
 function mapDispatchToProps(dispatch) {
+
+    function fetchPostsIfNeeded() {
+               return (dispatch, getState) => {
+                    dispatch({type: "MYTYPE", junk: 'YO DOG!'});
+               }
+             }
+
+    dispatch(fetchPostsIfNeeded());
+
     return {};
 }
 
@@ -20,6 +31,12 @@ const component = React.createClass({
 
   },
   componentWillMount() {
+    fetch('/rest/example').then((result) => {
+        result.json().then(function (finalresult) {
+            console.log(finalresult);
+        });
+    });
+
     console.log("componentWillMount");
   },
   componentDidMount() {

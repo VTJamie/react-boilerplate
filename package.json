@@ -17,6 +17,8 @@
     "react": "*",
     "react-dom": "*",
     "react-redux": "*",
+    "redux-api": "*",
+    "redux-thunk": "*",
     "redux": "*",
     "react-router": "*",
     "flux": "*",
@@ -24,6 +26,8 @@
     "ejs": "*",
     "isomorphic-fetch": "*",
     "es6-promise": "*",
-    "express": "*"
+    "express": "*",
+    "body-parser": "*"
+
   }
 }
