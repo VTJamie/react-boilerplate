@@ -6,7 +6,7 @@ import exampleService from '../../../services/example-service'
 import { bindActionCreators } from 'redux'
 
 function mapStateToProps(state) {
-    console.log(state);
+    console.log("State", state);
     return state;
 }
 
