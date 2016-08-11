@@ -18,26 +18,26 @@ const component = React.createClass({
         };
   },
   componentWillMount() {
-    console.log("componentWillMount");
+
   },
   componentDidMount() {
-    console.log("componentDidMount");
+
   },
   componentWillReceiveProps(nextprops) {
-    console.log("componentWillReceiveProps", nextprops);
+
   },
   shouldComponentUpdate(nextprops, nextstate) {
-    console.log("shouldComponentUpdate", nextprops, nextstate);
+
     return true;
   },
   componentWillUpdate(nextprops, nextstate) {
-    console.log("componentWillUpdate", nextprops, nextstate);
+
   },
   componentDidUpdate(prevprops, prevstate) {
-    console.log("componentDidUpdate", prevprops, prevstate);
+
   },
   componentWillUnmount() {
-    console.log("componentWillUnmount");
+
   },
   render() {
     return (

@@ -5,7 +5,8 @@
     "amd"
   ],
   "dependencies": {
-    "bootstrap-sass": "*"
+    "bootstrap-sass": "*",
+    "snapjs": "~1.9.3"
   },
   "license": "MIT",
   "ignore": [

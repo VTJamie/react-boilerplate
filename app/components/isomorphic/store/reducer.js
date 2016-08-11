@@ -1,11 +1,15 @@
-export default (state, action) => {
-   console.log(state, action);
+import extend from 'extend'
+
+export default (state, action) => {   	
    switch (action.type) {
     case "GOT_LIST": {
-        return {
-            exampleList: action.result
-        };
+    	state = extend({}, state, {exampleList: action.result});           	       
+    	break;        
     }
-   }
+    case "REACT_PANEL": {            
+    	state = extend({}, state, {reactPanel: action.result});           	                  
+       break;
+    }
+   }      
    return state;
 }
