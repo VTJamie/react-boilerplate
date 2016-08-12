@@ -4,10 +4,6 @@ import App from '../views/App'
 import Home from '../views/pages/home/Home'
 import About from '../views/pages/about/About'
 
-
-
-
-
 export default (
 
 <Route path="/" component={App}>

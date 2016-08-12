@@ -22,50 +22,28 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-const component = React.createClass({
-  getInitialState() {
-
-        return {
-            "greeting": "Hello World!"
-        };
-
-  },
+class Home extends React.Component {
+  
+  constructor() {
+    super();
+    this.state = {
+      "greeting": "Hello World!"
+    };      
+  }  
   componentWillMount() {
     this.props.actions.example.getList();    
-  },
-  componentDidMount() {
-    
-  },
-  componentWillReceiveProps(nextprops) {
-    
-  },
-  shouldComponentUpdate(nextprops, nextstate) {
-    
+  }  
+  shouldComponentUpdate(nextprops, nextstate) {  
     return true;
-  },
-  componentWillUpdate(nextprops, nextstate) {
-    
-  },
-  componentDidUpdate(prevprops, prevstate) {
-    
-  },
-  componentWillUnmount() {
-    
-  },
+  }
   clickEvent() {        
      this.setState({
          "greeting": "Hello World! " + new Date().getTime()
      });
-  },
-  toggleLeftPanel() {
-    this.props.actions.reactPanel.toggleLeftPanel();
-  },
-  toggleRightPanel() {
-    this.props.actions.reactPanel.toggleRightPanel();
-  },
+  }  
   refreshExamples() {
     this.props.actions.example.getList();
-  },
+  }
   render() {
     let rows = [];    
     if (this.props.exampleList != undefined) {
@@ -77,20 +55,14 @@ const component = React.createClass({
 
     return (
         <div className="container">
-            <div onClick={this.clickEvent}>{this.state.greeting}</div>
-            <div>{rows}</div>
-            <div> 
-            <Button bsStyle="primary" onClick={this.toggleLeftPanel}>Toggle Left Panel</Button>
-            </div>            
-            <div> 
-            <Button bsStyle="primary" onClick={this.toggleRightPanel}>Toggle Right Panel</Button>
-            </div>            
+            <div onClick={this.clickEvent.bind(this)}>{this.state.greeting}</div>
+            <div>{rows}</div>            
             <div>
                 <Link to="/about">About</Link>
             </div>
         </div>
     )
   }
-})
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(component)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

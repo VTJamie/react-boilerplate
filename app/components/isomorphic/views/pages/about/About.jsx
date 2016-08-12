@@ -11,34 +11,16 @@ function mapDispatchToProps(dispatch) {
     return {};
 }
 
-const component = React.createClass({
-  getInitialState() {
-        return {
-            "greeting": "About the Boilerplate!"
-        };
-  },
-  componentWillMount() {
-
-  },
-  componentDidMount() {
-
-  },
-  componentWillReceiveProps(nextprops) {
-
-  },
+class About extends React.Component {  
+  constructor() {
+    super();
+    this.state = {
+      "greeting": "About the Boilerplate!"
+    };
+  }
   shouldComponentUpdate(nextprops, nextstate) {
-
     return true;
-  },
-  componentWillUpdate(nextprops, nextstate) {
-
-  },
-  componentDidUpdate(prevprops, prevstate) {
-
-  },
-  componentWillUnmount() {
-
-  },
+  }  
   render() {
     return (
         <div className="container">
@@ -46,7 +28,7 @@ const component = React.createClass({
         </div>
         )
   }
-})
+}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(component)
+export default connect(mapStateToProps, mapDispatchToProps)(About)

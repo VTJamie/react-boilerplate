@@ -1,17 +1,14 @@
 import React from 'react'
 import Header from './header/Header'
 import {ReactPanelContent, ReactPanels, ReactPanelLeft, ReactPanelRight} from './panels/ReactPanels'
-
-export default React.createClass({
+class App extends React.Component {
   render() {
     return (
         <div>        	
             <ReactPanels>
-                <ReactPanelLeft>
-                    Left Panel!
+                <ReactPanelLeft>                    
                 </ReactPanelLeft>
-                <ReactPanelRight>
-                    Right Panel!
+                <ReactPanelRight>                    
                 </ReactPanelRight>
             </ReactPanels>
         	<ReactPanelContent>
@@ -21,4 +18,6 @@ export default React.createClass({
         </div>
     )
   }
-})
+}
+
+export default App

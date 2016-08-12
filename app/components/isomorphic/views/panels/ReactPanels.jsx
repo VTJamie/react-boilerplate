@@ -15,13 +15,13 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export var ReactPanelContent = connect(mapStateToProps, mapDispatchToProps)(React.createClass({    
-    shouldComponentUpdate(nextprops, nextstate) {    
+class ReactPanelContentBase  extends React.Component {  
+  shouldComponentUpdate(nextprops, nextstate) {    
     return true;
-  },
+  }
   closePanels() {
     this.props.actions.reactPanel.closePanels();
-  },
+  }
     render() {
       let classValue = ["react-panel-content"];      
 
@@ -37,7 +37,7 @@ export var ReactPanelContent = connect(mapStateToProps, mapDispatchToProps)(Reac
         let overlay = undefined;
       if (this.props.reactPanel && (this.props.reactPanel.left || this.props.reactPanel.right)) {
 
-      overlay = <div className="react-panel-content-click-overlay" onClick={this.closePanels}>&nbsp;</div>
+      overlay = <div className="react-panel-content-click-overlay" onClick={this.closePanels.bind(this)}>&nbsp;</div>
     }    
       return (
         <div className={classValue} >
@@ -46,9 +46,11 @@ export var ReactPanelContent = connect(mapStateToProps, mapDispatchToProps)(Reac
         </div>
       );
     }
-  }));
+  }
 
-export var  ReactPanels = React.createClass({
+export let ReactPanelContent = connect(mapStateToProps, mapDispatchToProps)(ReactPanelContentBase)
+ 
+export class ReactPanels extends React.Component {
     render() {
     
       return (
@@ -58,9 +60,9 @@ export var  ReactPanels = React.createClass({
         </div>
       );
     }
-  });
+  }
 
- export var  ReactPanelLeft = React.createClass({
+ export class  ReactPanelLeft extends React.Component {
     render() {
       return (
         <div className='react-panel react-panel-left'>
@@ -68,9 +70,9 @@ export var  ReactPanels = React.createClass({
         </div>
       );
     }
-  });
+  }
 
-export var ReactPanelRight = React.createClass({
+export class ReactPanelRight extends React.Component {
     render() {
       return (
         <div className='react-panel react-panel-right'>
@@ -78,4 +80,4 @@ export var ReactPanelRight = React.createClass({
         </div>
       );
     }
-  });
+  }
