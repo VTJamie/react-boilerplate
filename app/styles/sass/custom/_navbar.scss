@@ -1,0 +1,27 @@
+header {
+a {
+  height: 20px;
+.box-shadow-menu {
+  position: relative;
+  padding-left: 5px;
+
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 18px;
+  height: 3px;
+  background: black;
+  box-shadow: 
+    0 12px 0 0 black,
+    0 6px 0 0 black;
+}
+}
+
+.navbar-brand {
+  margin: 0;
+}
+
+}
