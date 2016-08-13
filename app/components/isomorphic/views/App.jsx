@@ -1,15 +1,14 @@
 import React from 'react'
 import Header from './header/Header'
-import {ReactPanelContent, ReactPanels, ReactPanelLeft, ReactPanelRight} from './panels/ReactPanels'
+import {ReactPanelContent, ReactPanels} from '../modules/panels/ReactPanels'
+import LeftMenu from './menu/LeftMenu'
 class App extends React.Component {
   render() {
     return (
         <div>        	
             <ReactPanels>
-                <ReactPanelLeft>                    
-                </ReactPanelLeft>
-                <ReactPanelRight>                    
-                </ReactPanelRight>
+                <LeftMenu>
+                </LeftMenu>
             </ReactPanels>
         	<ReactPanelContent>
             	<Header />
