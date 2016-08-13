@@ -24,4 +24,24 @@ a {
   margin: 0;
 }
 
+.panel-toggle {
+    position: relative;
+
+    margin-right: 10px;
+    padding: 5px 10px 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+.icon-bar {
+    margin-top: 4px;
+        background-color: #FFF;
+        width: 22px;
+        height: 2px;
+            display: block;
+}
+}
 }

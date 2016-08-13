@@ -17,17 +17,27 @@ function mapDispatchToProps(dispatch) {
 }
 
 class Header extends React.Component {
-  toggleLeftPanel() {    
+  toggleLeftPanel() {
     this.props.actions.reactPanel.toggleLeftPanel();
   }
   toggleRightPanel() {
     this.props.actions.reactPanel.toggleRightPanel();
   }
   render() {
-    return <header className="navbar navbar-container navbar-default">
-			<a href="#"  onClick={this.toggleLeftPanel.bind(this)}><span className="box-shadow-menu"></span></a>
-            <h1 className="navbar-brand">Playground</h1>
-        </header>
+    return <header className="navbar navbar-container navbar-static-top navbar-default">
+                    <div className="row">
+                        <div className="col-xs-3">
+                            <button type="button" className="pull-left panel-toggle" onClick={this.toggleLeftPanel.bind(this)}>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                                <span className="icon-bar"></span>
+                            </button>
+                        </div>
+                        <h1 className="col-xs-6 navbar-brand text-center">Playground</h1>
+                        <div className="col-xs-3">
+                        </div>
+                    </div>
+         </header>
   }
 }
 
