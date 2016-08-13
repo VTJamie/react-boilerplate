@@ -56,10 +56,7 @@ class Home extends React.Component {
     return (
         <div className="container">
             <div onClick={this.clickEvent.bind(this)}>{this.state.greeting}</div>
-            <div>{rows}</div>            
-            <div>
-                <Link to="/about">About</Link>
-            </div>
+            <div>{rows}</div>
         </div>
     )
   }
