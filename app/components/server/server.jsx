@@ -2,6 +2,7 @@ import express from 'express'
 import serverentry from './server-entry'
 import bodyParser from 'body-parser'
 import exampleEndPoint from './rest/example'
+import todoEndPoint from './rest/todo'
 
 var app = express();
 
@@ -20,6 +21,8 @@ app.set('views', __dirname + '/views');
 app.use('/static', express.static(__dirname + '/public'));
 
 exampleEndPoint(app);
+
+todoEndPoint(app);
 
 serverentry(app);
 

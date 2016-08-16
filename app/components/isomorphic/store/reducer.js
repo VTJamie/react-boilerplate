@@ -10,6 +10,10 @@ export default (state, action) => {
     	state = extend({}, state, {reactPanel: action.result});           	                  
        break;
     }
+    case "GOT_TODO_LIST": {
+        state = extend({}, state, {todos: action.result});
+        break;
+    }
    }      
    return state;
 }

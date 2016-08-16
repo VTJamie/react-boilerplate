@@ -28,6 +28,9 @@ class LeftMenu extends ReactPanelLeft {
             <Link onClick={this.toggleLeftPanel.bind(this)} to="/">Home</Link>
         </li>
         <li>
+            <Link onClick={this.toggleLeftPanel.bind(this)} to="/todo">Todo</Link>
+        </li>
+        <li>
             <Link onClick={this.toggleLeftPanel.bind(this)} to="/about">About</Link>
         </li>
       </ul>
