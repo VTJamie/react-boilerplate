@@ -1,20 +1,24 @@
 import fetch from 'isomorphic-fetch'
 
-export default {
-
-    getTodos: () => {
-        return (dispatch, getState) => {
-            return fetch('/rest/todo').then((response) => {
-                response.json().then(function (result) {
-                    dispatch({
-                        type: "GOT_TODO_LIST",
-                        result: result
-                    });
-                });
+function getTodos(dispatch, getState) {
+    return fetch('/rest/todo').then((response) => {
+        response.json().then(function (result) {
+            dispatch({
+                type: "GOT_TODO_LIST",
+                result: result
             });
+        });
+    });
+}
+
+var service = {};
+
+    service.getTodos = () => {
+        return (dispatch, getState) => {
+            return getTodos(dispatch, getState);
         };
-    },
-    addTodo: (todo) => {
+    };
+    service.addTodo = (todo) => {
         return (dispatch, getState) => {            
             return fetch('/rest/todo', {
                 method: "POST", 
@@ -24,15 +28,11 @@ export default {
               },
                 body: JSON.stringify(todo)
             }).then((response) => {
-                response.json().then(function (result) {
-                    dispatch({
-                        type: "ADDED_TODO"
-                    });
-                });
+               getTodos(dispatch, getState);
             });
         };
-    },
-    updateTodo: (todo) => {
+    };
+    service.updateTodo = (todo) => {
      return (dispatch, getState) => {
             return fetch('/rest/todo/' + todo.id, {
                 method: "POST",
@@ -42,15 +42,11 @@ export default {
               },
                 body: JSON.stringify(todo)
             }).then((response) => {
-                response.json().then(function (result) {
-                    dispatch({
-                        type: "UPDATED_TODO"
-                    });
-                });
+               getTodos(dispatch, getState);
             });
         };
-    },
-    deleteTodo: (todo) => {
+    };
+    service.deleteTodo = (todo) => {
      return (dispatch, getState) => {
             return fetch('/rest/todo/' + todo.id, {
                 method: "DELETE",
@@ -59,13 +55,9 @@ export default {
                 'Content-Type': 'application/json'
               }
             }).then((response) => {
-                response.json().then(function (result) {
-                    dispatch({
-                        type: "DELETED_TODO"
-                    });
-                });
+                getTodos(dispatch, getState);
             });
         };
-    }
+    };
 
-}
+export default service

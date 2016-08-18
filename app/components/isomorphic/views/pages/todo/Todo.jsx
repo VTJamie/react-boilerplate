@@ -38,9 +38,8 @@ class Todo extends React.Component {
     if (e.keyCode === 13) {
       var target = e.target;
       this.props.actions.todo.addTodo({todo: e.target.value}).then(() => {
-        this.props.actions.todo.getTodos();
         target.value  = "";
-      });  
+      });
     }
   }  
   render() {
@@ -50,16 +49,16 @@ class Todo extends React.Component {
       for (i = 0; i < this.props.todos.length; i++) {
 
         todos.push(
-            <TodoItem key={i} item={this.props.todos[i]} />
+            <TodoItem key={this.props.todos[i].id} item={this.props.todos[i]} />
           );
       }
     }
     else {
-      todos = <li className="list-group-item">No Todo Items</li>
+      todos = <li className="col-xs-12 list-group-item">No Todo Items</li>
     }
     return (
         <div className="container">            
-            <ul className="list-group">
+            <ul className="col-xs-12 list-group">
               {todos}
             </ul>
             <input value={this.state.todoEntry} className="form-control" onKeyUp={this.captureKeyup.bind(this)}  />

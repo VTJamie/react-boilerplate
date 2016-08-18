@@ -22,7 +22,6 @@ class TodoItem extends React.Component {
     super();
   }  
   componentWillMount() {
-  console.log(this.props.item);
    this.setState(this.props.item);
   }  
   shouldComponentUpdate(nextprops, nextstate) {  
@@ -31,7 +30,6 @@ class TodoItem extends React.Component {
   checkChange() {
     this.state.checked = !this.state.checked;
     this.setState(this.state);
-    console.log(this.state);
     this.props.actions.todo.updateTodo(this.state);
 
   }
@@ -41,14 +39,14 @@ class TodoItem extends React.Component {
   render() {
     
     return (
-        <li className="row list-group-item">
-            <div className="col-xs-2">
+        <li className="col-xs-12 list-group-item">
+            <div className="col-xs-3">
                 <input type="checkbox" defaultChecked={this.state.checked} onChange={this.checkChange.bind(this)} />
             </div>
-            <div className="col-xs-8">
+            <div className="col-xs-6">
             {this.state.todo}
             </div>
-            <div className="col-xs-2">
+            <div className="col-xs-3">
                 <Button bsStyle="danger" onClick={this.deleteItem.bind(this)}>Delete</Button>
             </div>
         </li>
