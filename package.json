@@ -29,6 +29,7 @@
     "redux": "*",
     "redux-api": "*",
     "redux-thunk": "*",
-    "webpack-stream": "*"
+    "webpack-stream": "*",
+    "node-uuid": "*"
   }
 }

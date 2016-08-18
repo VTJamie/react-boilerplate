@@ -13,11 +13,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-
         actions: {
             todo: bindActionCreators(todoService, dispatch)            
         }
-
     };
 }
 
@@ -28,7 +26,7 @@ class Todo extends React.Component {
     this.state = {};
   }  
   componentWillMount() {
-   this.props.actions.todo.getTodos();
+   this.refreshTodos();
   }  
   shouldComponentUpdate(nextprops, nextstate) {  
     return true;
@@ -52,16 +50,16 @@ class Todo extends React.Component {
       for (i = 0; i < this.props.todos.length; i++) {
 
         todos.push(
-            <TodoItem key={i} {...this.props.todos[i]} />
+            <TodoItem key={i} item={this.props.todos[i]} />
           );
       }
     }
     else {
-      todos = <li>No Todo Items</li>
+      todos = <li className="list-group-item">No Todo Items</li>
     }
     return (
         <div className="container">            
-            <ul>
+            <ul className="list-group">
               {todos}
             </ul>
             <input value={this.state.todoEntry} className="form-control" onKeyUp={this.captureKeyup.bind(this)}  />
