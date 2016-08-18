@@ -37,14 +37,17 @@ class TodoItem extends React.Component {
     this.props.actions.todo.deleteTodo(this.state);
   }
   render() {
-    
+    var text = this.state.todo;
+    if (this.state.checked) {
+        text = <del>{this.state.todo}</del>
+    }
     return (
         <li className="col-xs-12 list-group-item">
             <div className="col-xs-3">
                 <input type="checkbox" defaultChecked={this.state.checked} onChange={this.checkChange.bind(this)} />
             </div>
             <div className="col-xs-6">
-            {this.state.todo}
+                {text}
             </div>
             <div className="col-xs-3">
                 <Button bsStyle="danger" onClick={this.deleteItem.bind(this)}>Delete</Button>

@@ -35,8 +35,8 @@ class Todo extends React.Component {
     this.props.actions.todo.getTodos();    
   }
   captureKeyup(e) {
-    if (e.keyCode === 13) {
-      var target = e.target;
+    var target = e.target;
+    if (e.keyCode === 13 && target.value.trim() !== "") {
       this.props.actions.todo.addTodo({todo: e.target.value}).then(() => {
         target.value  = "";
       });
