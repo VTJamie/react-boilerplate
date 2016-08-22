@@ -23,9 +23,11 @@ class About extends React.Component {
   }  
   render() {
     return (
-        <div className="container">
-            <Link to="/">{this.state.greeting}</Link>
-        </div>
+        <div>
+           <div className="jumbotron">
+           {this.state.greeting}
+           </div>
+          </div>
         )
   }
 }

@@ -12,7 +12,9 @@ class App extends React.Component {
             </ReactPanels>
         	<ReactPanelContent>
             	<Header />
-            	{this.props.children}
+            	<div className="container-fluid">
+            	    {this.props.children}
+            	</div>
             </ReactPanelContent>
         </div>
     )

@@ -57,7 +57,7 @@ class Todo extends React.Component {
       todos = <li className="col-xs-12 list-group-item">No Todo Items</li>
     }
     return (
-        <div className="container">            
+        <div>
             <ul className="col-xs-12 list-group">
               {todos}
             </ul>
