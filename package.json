@@ -1,35 +1,51 @@
 {
   "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "",
   "dependencies": {
-    "babel-loader": "*",
-    "babel-preset-es2015": "*",
-    "babel-preset-react": "*",
-    "body-parser": "*",
-    "ejs": "*",
-    "es6-promise": "*",
-    "express": "*",
-    "extend": "*",
-    "flux": "*",
-    "gulp": "*",
-    "gulp-babel": "*",
-    "gulp-compass": "*",
-    "gulp-livereload": "*",
-    "gulp-nodemon": "*",
-    "gulp-react": "*",
-    "isomorphic-fetch": "*",
-    "merge": "*",
-    "merge-stream": "*",
-    "react": "*",
-    "react-bootstrap": "*",
-    "react-dom": "*",
-    "react-redux": "*",
-    "react-router": "*",
-    "redux": "*",
-    "redux-api": "*",
-    "redux-thunk": "*",
-    "webpack-stream": "*",
-    "node-uuid": "*"
-  }
+    "@aws-cdk/aws-cloudfront": "^1.41.0",
+    "@aws-cdk/aws-lambda": "^1.41.0",
+    "@aws-cdk/aws-route53": "^1.41.0",
+    "@aws-cdk/aws-s3": "^1.41.0",
+    "@material-ui/core": "^4.9.14",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.9.14",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@aws-cdk/core": "^1.41.0",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
+    "@types/jest": "^25.2.1",
+    "aws-cdk": "^1.41.0",
+    "http-server": "^0.12.3",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "jest": "^25.5.0",
+    "ts-jest": "^25.3.1"
+  },
+  "main": "src/index.tsx",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VTJamie/react-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VTJamie/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/VTJamie/react-boilerplate#readme",
+  "description": ""
 }

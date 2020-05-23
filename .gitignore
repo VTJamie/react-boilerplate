@@ -6,3 +6,18 @@ app/views/js/
 build/
 app/components/server/public/main.js
 app/components/server/public/styles/main.css
+*.js
+
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# Parcel build directories
+.cache
+.build
+dist/
+!webpack.config.js
+!jest.config.js
