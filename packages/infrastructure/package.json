@@ -1,0 +1,41 @@
+{
+  "name": "react-infrastructure",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@aws-cdk/assets": "^1.41.0",
+    "@aws-cdk/aws-cloudfront": "^1.41.0",
+    "@aws-cdk/aws-lambda": "^1.41.0",
+    "@aws-cdk/aws-lambda-event-sources": "^1.41.0",
+    "@aws-cdk/aws-route53": "^1.41.0",
+    "@aws-cdk/aws-s3": "^1.41.0",
+    "@aws-cdk/aws-s3-assets": "^1.41.0",
+    "@aws-cdk/aws-s3-deployment": "^1.41.0",
+    "@aws-cdk/core": "^1.41.0",
+    "@types/jest": "^25.2.1",
+    "aws-cdk": "^1.41.0",
+    "aws-sdk": "^2.683.0",
+    "jest": "^25.5.0",
+    "ts-jest": "^25.3.1",
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.3",
+    "react-boilerplate-rest-handler": "1.0.0"
+  },
+  "main": "src/index.tsx",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VTJamie/react-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VTJamie/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/VTJamie/react-boilerplate#readme",
+  "description": ""
+}

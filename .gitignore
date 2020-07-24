@@ -19,5 +19,7 @@ cdk.out
 .cache
 .build
 dist/
+ts/
 !webpack.config.js
 !jest.config.js
+types/

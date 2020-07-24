@@ -1,9 +1,7 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { ExampleAction, Store } from '../store';
 import { AnyAction } from 'redux';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 export type HelloViewProps = HelloViewState & HelloViewActions;
 

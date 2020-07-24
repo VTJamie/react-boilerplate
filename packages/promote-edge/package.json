@@ -1,10 +1,13 @@
 {
-  "name": "react-boilerplate",
+  "name": "promote-edge",
   "version": "1.0.0",
   "devDependencies": {
-    "lerna": "^3.21.0"
+    "typescript": "^3.9.3"
   },
+  "main": "src/index.tsx",
   "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
