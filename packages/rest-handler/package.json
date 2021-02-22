@@ -1,5 +1,5 @@
 {
-  "name": "react-boilerplate-rest-handler",
+  "name": "rest-handler",
   "version": "1.0.0",
   "devDependencies": {
     "@types/aws-lambda": "^8.10.51",
@@ -8,7 +8,8 @@
   "main": "src/index.tsx",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "clean": "rm -rf types"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,9 @@
     "url": "https://github.com/VTJamie/react-boilerplate/issues"
   },
   "homepage": "https://github.com/VTJamie/react-boilerplate#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "apollo-server-lambda": "^2.21.0",
+    "graphql": "15.5.0"
+  }
 }

@@ -24,18 +24,6 @@ export class WebsiteStack extends Stack {
 
     const accessIdentity = new OriginAccessIdentity(this, 'cloudfront-access-identity');
 
-    const restFunction = new Function(this, 'request-handler', {
-      code: S3Code.fromInline(`
-      exports.handler =  async function(event, context, callback) {
-        callback(null, 'THIS IS MY RESPONSE');
-      }
-      `),
-      handler: 'index.handler',
-      runtime: Runtime.NODEJS_12_X,
-      memorySize: 128,
-      timeout: Duration.seconds(5)
-    });
-
     bucket.grantRead(accessIdentity);
 
     const distribution = new CloudFrontWebDistribution(this, 'web-distribution', {
@@ -47,17 +35,6 @@ export class WebsiteStack extends Stack {
               allowedMethods: CloudFrontAllowedMethods.ALL,
               compress: true,
               isDefaultBehavior: true
-            },
-            {
-              compress: true,
-              allowedMethods: CloudFrontAllowedMethods.ALL,
-              lambdaFunctionAssociations: [
-                {
-                  eventType: LambdaEdgeEventType.VIEWER_REQUEST,
-                  lambdaFunction: restFunction.currentVersion,
-                }
-              ],
-              pathPattern: '/rest/*'
             }
           ],
           s3OriginSource: {
@@ -66,8 +43,6 @@ export class WebsiteStack extends Stack {
           }
         }
       ]
-    });
-
-    
+    }); 
   }
 }

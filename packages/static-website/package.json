@@ -1,5 +1,5 @@
 {
-  "name": "react-static-website",
+  "name": "static-website",
   "version": "1.0.0",
   "devDependencies": {
     "@material-ui/core": "^4.9.14",
@@ -19,11 +19,13 @@
     "ts-loader": "^7.0.4",
     "typescript": "^3.9.3",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "apollo-client": "2.6.10"
   },
   "main": "src/index.tsx",
   "scripts": {
-    "buildWeb": "webpack && cp index.html dist/index.html"
+    "build": "webpack && cp index.html dist/index.html",
+    "clean": "rm -rf dist && rm -rf types"
   },
   "repository": {
     "type": "git",

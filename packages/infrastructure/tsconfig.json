@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./ts/",
+        "outDir": "./types/",
         "noImplicitAny": true,
         "module": "commonjs",
         "target": "es6",
@@ -21,5 +21,5 @@
         "strictPropertyInitialization": false,
         "typeRoots": ["./node_modules/@types"]
     },
-    "exclude": ["cdk.out"]
+    "exclude": ["cdk.out", "types"]
 }

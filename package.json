@@ -5,6 +5,12 @@
     "lerna": "^3.21.0"
   },
   "scripts": {
+    "bootstrap": "lerna bootstrap --no-ci",
+    "clean": "lerna clean --yes && lerna run clean",
+    "start": "lerna start",
+    "deploy": "lerna run build --no-ci && lerna run deploy  --no-ci --stream",
+    "build": "lerna run build  --no-ci",
+    "lerna": "lerna"
   },
   "repository": {
     "type": "git",

@@ -4,7 +4,7 @@ import * as cdk from '@aws-cdk/core';
 import { WebsiteStack } from '../lib/website-stack';
 
 const app = new cdk.App();
-new WebsiteStack(app, 'WebsiteStack', {
+new WebsiteStack(app, 'website-stack', {
     webRoot: 'site',
     webDistributionFolder: '../static-website/dist'
 });

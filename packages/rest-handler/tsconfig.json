@@ -9,6 +9,7 @@
         "declaration": true,
         "strict": true,
         "strictNullChecks": true,
+        "esModuleInterop": true,
         "noImplicitThis": true,
         "alwaysStrict": true,
         "noUnusedLocals": false,
@@ -20,5 +21,6 @@
         "experimentalDecorators": true,
         "strictPropertyInitialization": false,
         "typeRoots": ["./node_modules/@types"]
-    }
+    },
+    "exclude": ["cdk.out", "types", "node_modules"]
 }
